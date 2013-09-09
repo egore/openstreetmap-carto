@@ -232,7 +232,7 @@
 
 #highway-area-fill {
   [feature = 'highway_living_street'][zoom >= 14] {
-    polygon-fill: #ccc;
+    polygon-fill: #fff;
   }
 
   [feature = 'highway_residential'],
