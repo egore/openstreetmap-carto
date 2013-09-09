@@ -978,7 +978,7 @@
   [feature = 'highway_path'][horse = 'designated'] {
     [zoom >= 13][tunnel != 'yes'] {
       line-width: 3;
-      line-color: #fff;
+      line-color: #df66d8;
       line-cap: round;
       line-join: round;
       line-opacity: 0.4;
