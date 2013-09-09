@@ -531,6 +531,19 @@
     }
   }
 
+  [historic = 'castle']::historic {
+    [zoom >= 17] {
+      text-name: "[name]";
+      text-size: 10;
+      text-fill: black;
+      text-dy: 12;
+      text-face-name: @bold-fonts;
+      text-halo-radius: 1;
+      text-wrap-width: 20;
+      text-placement: interior;
+    }
+  }
+
   [natural = 'water']::natural,
   [natural = 'lake']::natural,
   [landuse = 'reservoir']::landuse,
