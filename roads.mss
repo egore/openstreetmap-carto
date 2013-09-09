@@ -2206,7 +2206,7 @@
     [feature = 'railway_light_rail'],
     [feature = 'railway_narrow_gauge'],
     [feature = 'railway_funicular'] {
-      [zoom >= 10][zoom < 13] {
+      [zoom >= 8][zoom < 13] {
         line-width: 1;
         line-color: #ccc;
         [zoom >= 10] { line-color: #aaa }
@@ -2256,8 +2256,8 @@
 }
 
 #trams {
-  [railway = 'tram'][zoom >= 13] {
-    line-color: #444;
+  [railway = 'tram'][zoom >= 14] {
+    line-color: #858585;
     line-width: 1;
     [zoom >= 15] {
       line-width: 2;
