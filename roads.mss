@@ -957,7 +957,7 @@
     }
   }
 
-  [feature = 'highway_steps'][zoom >= 13][zoom < 15] {
+  [feature = 'highway_steps'][zoom >= 14][zoom < 15] {
     line-width: 6;
     line-color: #fff;
     line-opacity: 0.4;
