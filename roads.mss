@@ -962,7 +962,7 @@
     line-color: #fff;
     line-opacity: 0.4;
     b/line-width: 2;
-    b/line-color: salmon;
+    b/line-color: #c39559;
     b/line-dasharray: 1,3;
     b/line-cap: round;
     b/line-join: round;
@@ -970,7 +970,7 @@
 
   [feature = 'highway_steps'][zoom >= 15] {
     line-width: 5.0;
-    line-color: salmon;
+    line-color: #c39559;
     line-dasharray: 2,1;
   }
 
