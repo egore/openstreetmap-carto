@@ -244,10 +244,29 @@
   }
 
   [feature = 'highway_pedestrian'],
-  [feature = 'highway_footway'],
-  [feature = 'highway_path'] {
+  [feature = 'highway_path'][foot != 'designated'] {
     [zoom >= 14] {
       polygon-fill: #ededed;
+    }
+  }
+
+  [feature = 'highway_footway'],
+  [feature = 'highway_path'][foot = 'designated'] {
+    [zoom >= 15][tunnel != 'yes'] {
+      line-color: #ededed;
+      line-width: 3;
+      line-join: round;
+      line-cap: round;
+    }
+  }
+
+  [feature = 'highway_cycleway'],
+  [feature = 'highway_path'][bicycle = 'designated'] {
+    [zoom >= 15][tunnel != 'yes'] {
+      line-color: #3e6eaf;
+      line-width: 2.6;
+      line-join: round;
+      line-cap: round;
     }
   }
 
