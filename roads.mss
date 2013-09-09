@@ -1695,7 +1695,7 @@
 
       [feature = 'railway_rail'][zoom >= 13] {
         line-width: 6.5;
-        line-color: black;
+        line-color: #454545;
         line-join: round;
       }
 
@@ -1705,6 +1705,7 @@
         line-join: round;
       }
 
+/* disable abandoned railways
       [feature = 'railway_disused'],
       [feature = 'railway_abandoned'],
       [feature = 'railway_construction'] {
@@ -1714,6 +1715,7 @@
           line-join: round;
         }
       }
+*/
 
     [feature = 'aeroway_runway'][zoom >= 14] {
       line-width: 19;
@@ -1805,6 +1807,7 @@
         line-cap: round;
       }
 
+/* disable abandoned railways
       [feature = 'railway_disused'],
       [feature = 'railway_abandoned'],
       [feature = 'railway_construction'] {
@@ -1815,6 +1818,7 @@
           line-cap: round;
         }
       }
+*/
 
       [feature = 'railway_subway'][zoom >= 14] {
         line-width: 4;
