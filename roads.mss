@@ -990,17 +990,19 @@
 
   [feature = 'highway_footway'],
   [feature = 'highway_path'][foot = 'designated'] {
-    [zoom >= 13][tunnel != 'yes'] {
-      line-width: 4;
-      line-color: #fff;
-      line-opacity: 0.4;
-      line-cap: round;
-      line-join: round;
-      b/line-width: 1.5;
-      b/line-color: salmon;
-      b/line-dasharray: 1,3;
-      b/line-cap: round;
-      b/line-join: round;
+    [tunnel != 'yes'] {
+      [zoom >= 13][zoom <= 14] {
+        line-width: 1.1;
+        line-color: #c8c8c8;
+        line-cap: round;
+        line-join: round;
+      }
+      [zoom >= 15] {
+        line-width: 2;
+        line-color: #e7e7e7;
+        line-cap: round;
+        line-join: round;
+      }
     }
   }
 
