@@ -1494,8 +1494,7 @@
 
 .bridges {
   ::bridges_casing {
-    [feature = 'highway_motorway'],
-    [feature = 'highway_motorway_link'] {
+    [feature = 'highway_motorway'] {
       line-color: black;
       [zoom >= 12] { line-width: 6.5; }
       [zoom >= 13] { line-width: 8.5; }
@@ -1503,8 +1502,7 @@
       [zoom >= 17] { line-width: 18; }
     }
 
-    [feature = 'highway_trunk'],
-    [feature = 'highway_trunk_link'] {
+    [feature = 'highway_trunk'] {
       line-color: black;
       [zoom >= 12] { line-width: 6.5; }
       [zoom >= 13] { line-width: 8.5; }
@@ -1512,8 +1510,7 @@
       [zoom >= 17] { line-width: 18; }
     }
 
-    [feature = 'highway_primary'],
-    [feature = 'highway_primary_link'] {
+    [feature = 'highway_primary'] {
       line-color: black;
       [zoom >= 12] { line-width: 3.5; }
       [zoom >= 13] { line-width: 8; }
@@ -1521,20 +1518,56 @@
       [zoom >= 17] { line-width: 18; }
     }
 
-    [feature = 'highway_secondary'],
-    [feature = 'highway_secondary_link'] {
+    [feature = 'highway_secondary'] {
       line-color: black;
       [zoom >= 13] { line-width: 8; }
       [zoom >= 15] { line-width: 13; }
       [zoom >= 17] { line-width: 18; }
     }
 
-    [feature = 'highway_tertiary'],
-    [feature = 'highway_tertiary_link'] {
+    [feature = 'highway_tertiary'] {
       line-color: black;
       [zoom >= 14] { line-width: 7.5; }
       [zoom >= 15] { line-width: 12; }
       [zoom >= 17] { line-width: 18; }
+    }
+
+    [feature = 'highway_motorway_link'] {
+      line-color: black;
+      [zoom >= 12] { line-width: 2; }
+      [zoom >= 13] { line-width: 5.5; }
+      [zoom >= 15] { line-width: 9; }
+      [zoom >= 17] { line-width: 13; }
+    }
+
+    [feature = 'highway_trunk_link'] {
+      line-color: black;
+      [zoom >= 12] { line-width: 2; }
+      [zoom >= 13] { line-width: 5.5; }
+      [zoom >= 15] { line-width: 9; }
+      [zoom >= 17] { line-width: 13; }
+    }
+
+    [feature = 'highway_primary_link'] {
+      line-color: black;
+      [zoom >= 12] { line-width: 2; }
+      [zoom >= 13] { line-width: 5.5; }
+      [zoom >= 15] { line-width: 9; }
+      [zoom >= 17] { line-width: 13; }
+    }
+
+    [feature = 'highway_secondary_link'] {
+      line-color: black;
+      [zoom >= 13] { line-width: 5.5; }
+      [zoom >= 15] { line-width: 9; }
+      [zoom >= 17] { line-width: 13; }
+    }
+
+    [feature = 'highway_tertiary_link'] {
+      line-color: black;
+      [zoom >= 14] { line-width: 5.5; }
+      [zoom >= 15] { line-width: 9; }
+      [zoom >= 17] { line-width: 13; }
     }
 
     [feature = 'highway_residential'],
