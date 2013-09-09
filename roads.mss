@@ -2207,46 +2207,46 @@
       shield-size: 10;
       shield-fill: #fff;
       shield-placement: line;
-      shield-file: url("symbols/mot_shield[length].png");
+      shield-file: url("symbols/Bundesautobahn[length].png");
       shield-spacing: 750;
       shield-min-distance: 30;
       shield-face-name: @bold-fonts;
-      [length = 7] { shield-file: url('symbols/mot_shield6.png'); }
-      [length = 8] { shield-file: url('symbols/mot_shield7.png'); }
+      [length = 7] { shield-file: url('symbols/Bundesautobahn6.png'); }
+      [length = 8] { shield-file: url('symbols/Bundesautobahn7.png'); }
     }
   }
 
   [highway = 'trunk'][zoom >= 11][zoom < 13] {
     shield-name: "[ref]";
     shield-size: 10;
-    shield-fill: #fff;
+    shield-fill: #000;
     shield-placement: line;
-    shield-file: url("symbols/tru_shield[length].png");
+    shield-file: url("symbols/B[length].png");
     shield-spacing: 750;
     shield-min-distance: 30;
-    shield-face-name: @bold-fonts;
+    shield-face-name: @book-fonts;
   }
 
   [highway = 'primary'][zoom >= 11][zoom < 13] {
     shield-name: "[ref]";
     shield-size: 10;
-    shield-fill: #fff;
+    shield-fill: #000;
     shield-placement: line;
-    shield-file: url("symbols/pri_shield[length].png");
+    shield-file: url("symbols/B[length].png");
     shield-spacing: 750;
     shield-min-distance: 30;
-    shield-face-name: @bold-fonts;
+    shield-face-name: @book-fonts;
   }
 
   [highway = 'secondary'][zoom >= 12][zoom < 13] {
     shield-name: "[ref]";
     shield-size: 10;
-    shield-fill: #fff;
+    shield-fill: #000;
     shield-placement: line;
-    shield-file: url("symbols/sec_shield[length].png");
+    shield-file: url("symbols/L[length].png");
     shield-spacing: 750;
     shield-min-distance: 30;
-    shield-face-name: @bold-fonts;
+    shield-face-name: @book-fonts;
   }
 }
 
@@ -2257,46 +2257,46 @@
       shield-size: 10;
       shield-fill: #fff;
       shield-placement: line;
-      shield-file: url("symbols/mot_shield[length].png");
+      shield-file: url("symbols/Bundesautobahn[length].png");
       shield-spacing: 750;
       shield-min-distance: 30;
       shield-face-name: @bold-fonts;
-      [length = 7] { shield-file: url('symbols/mot_shield6.png'); }
-      [length = 8] { shield-file: url('symbols/mot_shield7.png'); }
+      [length = 7] { shield-file: url('symbols/Bundesautobahn6.png'); }
+      [length = 8] { shield-file: url('symbols/Bundesautobahn7.png'); }
     }
   }
 
   [highway = 'trunk'][zoom >= 13] {
     shield-name: "[ref]";
     shield-size: 10;
-    shield-fill: #fff;
+    shield-fill: #000;
     shield-placement: line;
-    shield-file: url("symbols/tru_shield[length].png");
+    shield-file: url("symbols/B[length].png");
     shield-spacing: 750;
     shield-min-distance: 30;
-    shield-face-name: @bold-fonts;
+    shield-face-name: @book-fonts;
   }
 
   [highway = 'primary'][zoom >= 13] {
     shield-name: "[ref]";
     shield-size: 10;
-    shield-fill: #fff;
+    shield-fill: #000;
     shield-placement: line;
-    shield-file: url("symbols/pri_shield[length].png");
+    shield-file: url("symbols/B[length].png");
     shield-spacing: 750;
     shield-min-distance: 30;
-    shield-face-name: @bold-fonts;
+    shield-face-name: @book-fonts;
   }
 
   [highway = 'secondary'][bridge = 'no'][zoom >= 13] {
     shield-name: "[ref]";
     shield-size: 10;
-    shield-fill: #fff;
+    shield-fill: #000;
     shield-placement: line;
-    shield-file: url("symbols/sec_shield[length].png");
+    shield-file: url("symbols/L[length].png");
     shield-spacing: 750;
     shield-min-distance: 30;
-    shield-face-name: @bold-fonts;
+    shield-face-name: @book-fonts;
   }
 
   [highway = 'tertiary'][bridge = 'no'][zoom >= 13] {
