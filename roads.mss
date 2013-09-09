@@ -1452,24 +1452,24 @@
 }
 
 #tracks-tunnels {
-  [zoom >= 14] {
-    line-width: 4.5;
+  [zoom >= 15] {
+    line-width: 4;
     line-color: grey;
     line-dasharray: 4,2;
-    b/line-width: 3;
+    b/line-width: 2.5;
     b/line-color: white;
     b/line-cap: round;
     b/line-join: round;
-    c/line-width: 1.5;
+    c/line-width: 1;
     c/line-color: #996600;
     c/line-dasharray: 3,4;
     c/line-opacity: 0.5;
     c/line-join: round;
     c/line-cap: round;
     [tracktype = 'grade1'] {
-      line-width: 4;
-      b/line-width: 3.5;
-      c/line-width: 2;
+      line-width: 4.5;
+      b/line-width: 3;
+      c/line-width: 1.5;
       c/line-color: #b37700;
       c/line-dasharray: 100,0; /* i.e. none, see https://github.com/mapbox/carto/issues/214 */
     }
@@ -1477,16 +1477,16 @@
       c/line-color: #a87000;
     }
     [tracktype = 'grade3'] {
-      b/line-width: 3.5;
-      c/line-width: 2;
+      b/line-width: 3;
+      c/line-width: 1.5;
       c/line-dasharray: 100,0; /* yes, weird but true */
     }
     [tracktype = 'grade4'] {
-      c/line-width: 2;
+      c/line-width: 1.5;
       c/line-dasharray: 4,7,1,5;
     }
     [tracktype = 'grade5'] {
-      c/line-width: 2;
+      c/line-width: 1.5;
       c/line-dasharray: 1,5;
     }
   }
