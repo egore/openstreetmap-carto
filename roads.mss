@@ -1261,7 +1261,7 @@
     [feature = 'railway_funicular'] {
       [zoom >= 13] {
         a/line-width: 2;
-        a/line-color: #666;
+        a/line-color: #909090;
         [tunnel = 'yes'] {
           a/line-width: 5;
           a/line-dasharray: 5,3;
@@ -1290,8 +1290,9 @@
 
     [feature = 'railway_light_rail'][zoom >= 13] {
       line-width: 2;
-      line-color: #666;
+      line-color: #a0a0a0;
       [tunnel = 'yes'] {
+        line-color: #858585;
         line-dasharray: 5,3;
       }
     }
@@ -1304,6 +1305,7 @@
       }
     }
 
+/* disable abandoned railways
     [feature = 'railway_disused'],
     [feature = 'railway_abandoned'],
     [feature = 'railway_construction'] {
@@ -1314,6 +1316,7 @@
         line-join: round;
       }
     }
+*/
 
     [feature = 'railway_platform'] {
       [zoom >= 16] {
