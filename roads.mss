@@ -2445,12 +2445,12 @@
   [highway = 'tertiary'][bridge = 'no'][zoom >= 13] {
     shield-name: "[ref]";
     shield-size: 10;
-    shield-fill: #fff;
+    shield-fill: #000;
     shield-placement: line;
-    shield-file: url("symbols/ter_shield[length].png");
+    shield-file: url("symbols/L[length].png");
     shield-spacing: 750;
     shield-min-distance: 30;
-    shield-face-name: @bold-fonts;
+    shield-face-name: @book-fonts;
     shield-avoid-edges: true;
   }
 
@@ -2460,7 +2460,7 @@
       text-name: "[ref]";
       text-size: 10;
       text-fill: #000;
-      text-face-name: @bold-fonts;
+      text-face-name: @book-fonts;
       text-min-distance: 18;
       text-halo-radius: 1;
       text-spacing: 750;
@@ -2513,7 +2513,8 @@
       text-clip: false;
       text-placement: line;
       text-face-name: @book-fonts;
-      text-halo-radius: 0;
+      text-halo-radius: 1;
+      text-halo-fill: #f7e96a;
     }
     [zoom >= 14] {
       text-size: 9;
@@ -2537,7 +2538,6 @@
       text-size: 11;
     }
   }
-  [highway = 'proposed'],
   [highway = 'construction'] {
     [zoom >= 13] {
       text-name: "[name]";
