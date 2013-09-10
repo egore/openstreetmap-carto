@@ -1,16 +1,16 @@
 /* For the main linear features, such as roads and railways. */
 
-@motorway-fill: #89a4cb;
-@trunk-fill: #94d494;
+@motorway-fill: #eb7d54;
+@trunk-fill: #e27272;
 @trunk-fill-alternative: @trunk-fill;
-@primary-fill: #dd9f9f;
-@secondary-fill: #f9d6aa;
-@tertiary-fill: #f8f8ba;
+@primary-fill: #e27272;
+@secondary-fill: #f6e856;
+@tertiary-fill: #ffffb3;
 @residential-fill: #ffffff;
 @service-fill: #ffffff;
-@living-street-fill: #ccc;
+@living-street-fill: #bbb;
 @pedestrian-fill: #ededed;
-@road-fill: #ddd;
+@road-fill: #bbb;
 @path-fill: black;
 @footway-fill: #c8c8c8;
 @steps-fill: #c39559;
@@ -25,12 +25,15 @@
 @taxiway-fill: @aeroway-fill;
 @helipad-fill: @aeroway-fill;
 
+@motorway-overlay: #f6e856;
+@trunk-overlay: #f6f6f6;
+
 @default-casing: white;
-@motorway-casing: #7788a1;
-@trunk-casing: #7eae7e;
-@primary-casing: #c57b7e;
-@secondary-casing: #cca16a;
-@tertiary-casing: #c6c68a;
+@motorway-casing: #b95331;
+@trunk-casing: #b93131;
+@primary-casing: #8d4346;
+@secondary-casing: #a37b48;
+@tertiary-casing: #bbb;
 @residential-casing: #bbb;
 @service-casing: #999;
 @living-street-casing: @default-casing;
@@ -56,27 +59,27 @@
 @motorway-tunnel-fill: #f1a78d; /* TODO lighten(@motorway-fill, 25%); */
 @trunk-tunnel-fill: #e99695; /* TODO lighten(@trunk-fill, 10%); */
 @primary-tunnel-fill: #e99696; /* TODO lighten(@primary-fill, 10%); */
-@secondary-tunnel-fill: #f7e96a /* TODO lighten(@secondary-fill, 5%); */
+@secondary-tunnel-fill: #f7e96a; /* TODO lighten(@secondary-fill, 5%); */
 @tertiary-tunnel-fill: lighten(@tertiary-fill, 5%);
 @residential-tunnel-fill: lighten(@residential-fill, 10%);
 
 
-@motorway-width-z12: 2;
-@trunk-width-z12: 2.5;
+@motorway-width-z12: 5.5;
+@trunk-width-z12: 5.5;
 @primary-width-z12: 2.5;
 @secondary-width-z12: 2;
 
-@motorway-width-z13: 5;
-@trunk-width-z13: 7;
+@motorway-width-z13: 7;
+@trunk-width-z13: 6.5;
 @primary-width-z13: 7;
-@secondary-width-z13: 8;
+@secondary-width-z13: 6.5;
 @tertiary-width-z13: 4.5;
 @residential-width-z13: 2;
 
 @tertiary-width-z14: 6;
 @residential-width-z14: 3;
 
-@motorway-width-z15: 8.5;
+@motorway-width-z15: 11;
 @trunk-width-z15: 11;
 @primary-width-z15: 11;
 @secondary-width-z15: 11;
@@ -85,7 +88,7 @@
 
 @residential-width-z16: 9.4;
 
-@motorway-width-z17: 11; // shouldn't be narrower than trunk!
+@motorway-width-z17: 15.5;
 @trunk-width-z17: 15.5;
 @primary-width-z17: 15.5;
 @secondary-width-z17: 15.5;
