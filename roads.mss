@@ -53,10 +53,10 @@
 @tunnel-casing: grey;
 @bridge-casing: black;
 
-@motorway-tunnel-fill: lighten(@motorway-fill, 25%);
-@trunk-tunnel-fill: lighten(@trunk-fill, 10%);
-@primary-tunnel-fill: lighten(@primary-fill, 10%);
-@secondary-tunnel-fill: lighten(@secondary-fill, 5%);
+@motorway-tunnel-fill: #f1a78d; /* TODO lighten(@motorway-fill, 25%); */
+@trunk-tunnel-fill: #e99695; /* TODO lighten(@trunk-fill, 10%); */
+@primary-tunnel-fill: #e99696; /* TODO lighten(@primary-fill, 10%); */
+@secondary-tunnel-fill: #f7e96a /* TODO lighten(@secondary-fill, 5%); */
 @tertiary-tunnel-fill: lighten(@tertiary-fill, 5%);
 @residential-tunnel-fill: lighten(@residential-fill, 10%);
 
@@ -434,27 +434,53 @@
   [highway = 'motorway'],
   [highway = 'motorway_link'] {
     [zoom >= 12] {
-      line-width: 2;
+      line-width: 4.5;
       line-color: @motorway-tunnel-fill;
       line-cap: round;
       line-join: round;
+      b/line-width: 1.1;
+      b/line-color: #f9ed86;
+      b/line-cap: round;
+      b/line-join: round;
     }
-    [zoom >= 13] { line-width: 5; }
-    [zoom >= 15] { line-width: 8.5; }
-    [zoom >= 17] { line-width: 11; }
+    [zoom >= 13] {
+      line-width: 6;
+      b/line-width: 1.2;
+    }
+    [zoom >= 15] {
+      line-width: 10;
+      b/line-width: 2.3;
+    }
+    [zoom >= 17] {
+      line-width: 14.5;
+      b/line-width: 3;
+    }
   }
 
   [highway = 'trunk'],
   [highway = 'trunk_link'] {
     [zoom >= 12] {
-      line-width: 2.5;
+      line-width: 4.5;
       line-color: @trunk-tunnel-fill;
       line-join: round;
       line-cap: round;
+      b/line-width: 1.1;
+      b/line-color: #fff;
+      b/line-cap: round;
+      b/line-join: round;
     }
-    [zoom >= 13] { line-width: 6.5; }
-    [zoom >= 15] { line-width: 9; }
-    [zoom >= 17] { line-width: 12; }
+    [zoom >= 13] {
+      line-width: 6;
+      b/line-width: 1.2;
+    }
+    [zoom >= 15] {
+      line-width: 10;
+      b/line-width: 2.3;
+    }
+    [zoom >= 17] {
+      line-width: 14.5;
+      b/line-width: 3;
+    }
   }
 
   [highway = 'primary'],
