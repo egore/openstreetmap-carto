@@ -2262,7 +2262,7 @@
 
   [feature = 'highway_trunk'],
   [feature = 'highway_trunk_link'] {
-    [zoom >= 6][zoom < 11] {
+    [zoom >= 6][zoom <= 11] {
       line-width: 0.4;
       line-color: @trunk-fill;
       [zoom >= 7] {
@@ -2277,7 +2277,7 @@
 
   [feature = 'highway_primary'],
   [feature = 'highway_primary_link'] {
-    [zoom >= 6][zoom < 11] {
+    [zoom >= 6][zoom <= 11] {
       line-width: 0.3;
       line-color: @primary-fill;
       [zoom >= 7] { line-width: 0.7; }
