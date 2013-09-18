@@ -541,7 +541,7 @@
   }
 }
 
-#minor-roads-casing::links {
+#roads-casing::links {
   [highway = 'raceway'] {
     [zoom >= 12] {
       line-color: pink;
@@ -610,7 +610,7 @@
   }
 }
 
-#minor-roads-casing {
+#roads-casing {
   [highway = 'motorway'][tunnel != 'yes'] {
     [zoom >= 12] {
       line-width: @motorway-width-z12 + 0.5;
@@ -739,7 +739,7 @@
   }
 }
 
-#minor-roads-fill::links {
+#roads-fill::links {
   [feature = 'highway_motorway_link'][tunnel != 'yes'] {
     [zoom >= 12] {
       line-width: @motorway-width-z12 - 4.5;
@@ -801,7 +801,7 @@
   }
 }
 
-#minor-roads-fill {
+#roads-fill {
 
   /*
    * The construction rules for small roads are strange, since if construction is null its assumed that
@@ -2245,7 +2245,7 @@
   }
 }
 
-#roads {
+#roads-low-zoom {
   [feature = 'highway_motorway'],
   [feature = 'highway_motorway_link'] {
     [zoom >= 5][zoom < 12] {
