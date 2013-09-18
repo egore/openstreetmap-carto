@@ -2,7 +2,7 @@
   [place = 'continent'][zoom >= 1][zoom < 3] {
     text-name: "[name]";
     text-size: 10;
-    text-fill: #9d6c9d;
+    text-fill: #3d383d;
     text-face-name: @book-fonts;
     text-halo-radius: 1;
     text-wrap-width: 20;
@@ -12,13 +12,16 @@
 .country {
   [place = 'country'][zoom >= 2][zoom < 6] {
     text-name: "[name]";
-    text-size: 8;
-    text-fill: #9d6c9d;
+    text-size: 9;
+    text-fill: #3d383d;
     text-face-name: @book-fonts;
     text-halo-radius: 1;
     text-wrap-width: 20;
     [zoom >= 4] {
-      text-size: 10;
+      text-size: 11;
+    }
+    [zoom >= 6] {
+      text-size: 12;
     }
   }
 }
@@ -27,15 +30,21 @@
   [place = 'state'][zoom >= 4][zoom < 9] {
     text-name: "[ref]";
     text-size: 8;
-    text-fill: #9d6c9d;
+    text-fill: #375841;
     text-face-name: @oblique-fonts;
     text-halo-radius: 1;
     text-wrap-width: 0;
     [zoom >= 5] {
       text-name: "[name]";
+      text-fill: #629471;
+    }
+    [zoom >= 6] {
+      text-fill: #538562;
     }
     [zoom >= 7] {
+      text-fill: #629b74;
       text-size: 11;
+      /* text-halo-opacity: 0.5; This seems not to be supported (yet?) */
     }
   }
 }
