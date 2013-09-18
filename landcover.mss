@@ -17,10 +17,10 @@
 // --- Other ----
 
 @aerodrome: #ccc;
-@allotments: #e5c7ab;
+@allotments: #ead8bd;
 @apron: #e9d1ff;
 @attraction: #f2caea;
-@barracks: #ff8f8f;
+@barracks: #ffb5b5;
 @campsite: #ccff99; // also caravan_site, picnic_site
 @cemetery: #aacbaf; // also grave_yard
 @construction: #9d9d6c;
@@ -31,14 +31,14 @@
 @garages: #996;
 @heath: #d6d99f;
 @industrial: #dfd1d6; // also railway
-@farmyard: #ddbf92;
-@farm: #ead8bd; // also farmland
+@farmyard: #ead8bd;
+@farm: #f2e9d7; // also farmland
 @parking: #f7efb7;
 @playground: #ccfff1;
 @power: #bbb;
 @rest_area: #efc8c8; // also services
 @retail: #f1dada;
-@residential: #ddd;
+@residential: #e9e9e9;
 @sand: #ffdf88;
 @school: #f0f0d8; // also university, college, hospital, kindergarten
 
@@ -66,7 +66,7 @@
     }
   }
 
-  [feature = 'tourism_attraction'][zoom >= 10] {
+  [feature = 'tourism_attraction'][zoom >= 12] {
     polygon-fill: @attraction;
   }
 
@@ -77,7 +77,7 @@
   }
 
   [feature = 'landuse_vineyard'] {
-    [zoom >= 10][zoom < 13] {
+    [zoom >= 11][zoom < 13] {
       polygon-fill: @vineyard;
     }
     [zoom >= 13] {
@@ -92,7 +92,7 @@
   [feature = 'landuse_cemetery'],
   [feature = 'landuse_grave_yard'],
   [feature = 'amenity_grave_yard'] {
-    [zoom >= 10][zoom < 14] {
+    [zoom >= 11][zoom < 14] {
       polygon-fill: @cemetery;
     }
     [zoom >= 14] {
@@ -102,8 +102,11 @@
     }
   }
 
-  [feature = 'landuse_residential'][zoom >= 10] {
+  [feature = 'landuse_residential'][zoom >= 11] {
     polygon-fill: @residential;
+    [zoom >= 15] {
+      polygon-fill: #ddd;
+    }
   }
 
   [feature = 'landuse_garages'][zoom >= 12] {
@@ -111,7 +114,7 @@
     polygon-opacity: 0.2;
   }
 
-  [feature = 'military_barracks'][zoom >= 10] {
+  [feature = 'military_barracks'][zoom >= 11] {
     polygon-fill: @barracks;
   }
 
@@ -129,7 +132,7 @@
   }
 
   [feature = 'military_danger_area'] {
-    [zoom >= 9][zoom < 11] {
+    [zoom >= 10][zoom < 11] {
       polygon-fill: @danger_area;
       polygon-opacity: 0.3;
     }
@@ -147,7 +150,7 @@
 
   [feature = 'leisure_park'],
   [feature = 'leisure_recreation_ground'] {
-    [zoom >= 10] {
+    [zoom >= 11] {
       polygon-fill: @park;
       polygon-opacity: 0.6;
     }
@@ -157,20 +160,20 @@
     polygon-pattern-file: url('symbols/zoo.png');
   }
 
-  [feature = 'leisure_common'][zoom >= 10] {
+  [feature = 'leisure_common'][zoom >= 11] {
     polygon-fill: @grass;
   }
 
-  [feature = 'leisure_garden'][zoom >= 10] {
+  [feature = 'leisure_garden'][zoom >= 11] {
     polygon-fill: @grass;
   }
 
-  [feature = 'leisure_golf_course'][zoom >= 10] {
+  [feature = 'leisure_golf_course'][zoom >= 11] {
     polygon-fill: @golf_course;
   }
 
   [feature = 'landuse_allotments'] {
-    [zoom >= 10][zoom < 14] {
+    [zoom >= 11][zoom < 14] {
       polygon-fill: @allotments;
     }
     [zoom >= 14] {
@@ -178,29 +181,61 @@
     }
   }
 
-  [feature = 'landuse_forest'] {
-    [zoom >= 8][zoom < 14] {
-      polygon-fill: @forest;
+  [feature = 'landuse_forest'],
+  [feature = 'landuse_wood'],
+  [feature = 'natural_wood'] {
+    [zoom >= 7][zoom < 14] {
+      [zoom >= 7] {
+        polygon-fill: #c6ddb5;
+        polygon-opacity: 0.6;
+      }
+      [zoom >= 8] {
+        polygon-fill: @forest;
+        polygon-opacity: 0.4;
+      }
+      [zoom >= 10] {
+        polygon-opacity: 0.5;
+      }
+      [zoom >= 11] {
+        polygon-opacity: 0.6;
+      }
+      [zoom >= 13] {
+        polygon-opacity: 0.9;
+      }
     }
     [zoom >= 14] {
-      polygon-pattern-file: url('symbols/forest.png');
+      [feature = 'wood_deciduous'] {
+        polygon-pattern-file: url('symbols/wood_deciduous.png');
+      }
+      [feature = 'wood_mixed'] {
+        polygon-pattern-file: url('symbols/wood_mixed.png');
+      }
+      [feature = 'wood_coniferous'] {
+        polygon-pattern-file: url('symbols/wood_coniferous.png');
+      }
+      [feature != 'wood_coniferous'][feature != 'wood_mixed'][feature != 'wood_coniferous'] {
+        polygon-fill: #8dc56c;
+        polygon-opacity: 1;
+      }
     }
   }
 
-  [feature = 'landuse_farmyard'][zoom >= 9] {
+  [feature = 'landuse_farmyard'][zoom >= 12] {
     polygon-fill: @farmyard;
+    polygon-opacity: 0.9;
   }
 
   [feature = 'landuse_farm'],
   [feature = 'landuse_farmland'] {
-    [zoom >= 9] {
+    [zoom >= 10] {
       polygon-fill: @farm;
+      polygon-opacity: 0.7;
     }
   }
 
   [feature = 'landuse_recreation_ground'],
   [feature = 'landuse_conservation'] {
-    [zoom >= 10] {
+    [zoom >= 11] {
       polygon-fill: @grass;
     }
   }
@@ -226,7 +261,7 @@
 
   [feature = 'power_station'],
   [feature = 'power_generator'] {
-    [zoom >= 10] {
+    [zoom >= 11] {
       polygon-fill: @power;
       [zoom >= 12] {
         line-width: 0.4;
@@ -241,7 +276,7 @@
     line-color: #555;
   }
 
-  [feature = 'landuse_commercial'][zoom >= 10] {
+  [feature = 'landuse_commercial'][zoom >= 11] {
     polygon-fill: @commercial;
   }
 
@@ -249,17 +284,19 @@
   [feature = 'landuse_landfill'],
   [feature = 'landuse_greenfield'],
   [feature = 'landuse_construction'] {
-    [zoom >= 10] {
+    [zoom >= 11] {
       polygon-fill: @commercial;
       polygon-opacity: 0.7;
     }
   }
 
+/* Different in mapnik-german
   [feature = 'natural_wood'] {
     [zoom >= 8] {
       polygon-fill: @wood;
     }
   }
+*/
 
   [feature = 'natural_desert'][zoom >= 8] {
     polygon-fill: @desert;
@@ -269,7 +306,7 @@
     polygon-fill: @sand;
   }
 
-  [feature = 'natural_heath'][zoom >= 10] {
+  [feature = 'natural_heath'][zoom >= 11] {
     polygon-fill: @heath;
   }
 
@@ -291,7 +328,7 @@
   [feature = 'amenity_school'],
   [feature = 'amenity_hospital'],
   [feature = 'amenity_kindergarten'] {
-    [zoom >= 10] {
+    [zoom >= 11] {
       polygon-fill: @school;
       [zoom >= 12] {
         line-width: 0.3;
@@ -300,7 +337,7 @@
     }
   }
 
-  [feature = 'amenity_parking'][zoom >= 10] {
+  [feature = 'amenity_parking'][zoom >= 11] {
     polygon-fill: @parking;
     [zoom >= 15] {
       line-width: 0.3;
@@ -347,18 +384,18 @@
 #sports-grounds {
   [leisure = 'sports_centre'],
   [leisure = 'stadium'] {
-    [zoom >= 10] {
+    [zoom >= 12] {
       polygon-fill: @stadium;
     }
   }
 
-  [leisure = 'track'][zoom >= 10] {
+  [leisure = 'track'][zoom >= 12] {
     polygon-fill: @track;
     line-width: 0.5;
     line-color: #888;
   }
 
-  [leisure = 'pitch'][zoom >= 10] {
+  [leisure = 'pitch'][zoom >= 12] {
     polygon-fill: @pitch;
     line-width: 0.5;
     line-color: #888;
