@@ -65,13 +65,13 @@
 
 
 @motorway-width-z12: 5.5;
-@trunk-width-z12: 5.5;
-@primary-width-z12: 2.5;
+@trunk-width-z12: 3.5;
+@primary-width-z12: 3.5;
 @secondary-width-z12: 2;
 
 @motorway-width-z13: 7;
 @trunk-width-z13: 6.5;
-@primary-width-z13: 7;
+@primary-width-z13: 6.5;
 @secondary-width-z13: 6.5;
 @tertiary-width-z13: 4.5;
 @residential-width-z13: 2;
