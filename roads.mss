@@ -2298,12 +2298,12 @@
     }
   }
 
-    [feature = 'railway_rail'][zoom >= 6][zoom < 13] {
-      line-width: 0.6;
+    [feature = 'railway_rail'][zoom >= 10][zoom < 13] {
+      line-width: 1.5;
       line-color: #aaa;
-      [zoom >= 9] { line-width: 1; }
-      [zoom >= 10] { line-width: 2; }
+      [zoom >= 12] { line-width: 2; }
       [tunnel = 'yes'] {
+        line-width: 2;
         line-dasharray: 5,2;
       }
     }
