@@ -611,6 +611,87 @@
 }
 
 #roads-casing {
+/* TODO adapt SQL-statements/default.style to support this
+  [highway = 'proposed'],
+  [highway = 'construction'] {
+    [proposed != 'motorway'],
+    [proposed = 'motorway_link'],
+    [construction = 'motorway'],
+    [construction = 'motorway_link'] {
+      [zoom >= 12] {
+        line-width: 0.5;
+        line-color: @motorway-fill;
+        line-join: round;
+      }
+      [zoom >= 13] { line-width: 1; }
+      [zoom >= 15] { line-width: 1.5; }
+      [zoom >= 17] { line-width: 2.75; }
+    }
+    [proposed = 'trunk'],
+    [proposed = 'trunk_link'],
+    [construction = 'trunk'],
+    [construction = 'trunk_link'] {
+      [zoom >= 12] {
+        line-width: 0.5;
+        line-color: @trunk-fill;
+        line-join: round;
+      }
+      [zoom >= 13] { line-width: 1; }
+      [zoom >= 15] { line-width: 1.5; }
+      [zoom >= 17] { line-width: 2.25; }
+    }
+    [proposed = 'primary'],
+    [proposed = 'primary_link'],
+    [construction = 'primary'],
+    [construction = 'primary_link'] {
+      [zoom >= 12] {
+        line-width: 0.5;
+        line-color: @primary-fill;
+        line-join: round;
+      }
+      [zoom >= 13] { line-width: 1; }
+      [zoom >= 15] { line-width: 1.5; }
+      [zoom >= 17] { line-width: 2.25; }
+    }
+    [proposed = 'tertiary'],
+    [proposed = 'tertiary_link'],
+    [construction = 'tertiary'],
+    [construction = 'tertiary_link'] {
+      [zoom >= 14] {
+        line-width: 0.75;
+        line-color: @tertiary-fill;
+        line-join: round;
+      }
+      [zoom >= 15] { line-width: 1.5; }
+      [zoom >= 17] { line-width: 2; }
+    }
+    [proposed != 'motorway'],
+    [proposed != 'motorway_link'],
+    [construction != 'motorway'],
+    [construction != 'motorway_link'],
+    [proposed != 'trunk'],
+    [proposed != 'trunk_link'],
+    [construction != 'trunk'],
+    [construction != 'trunk_link'],
+    [proposed != 'primary'],
+    [proposed != 'primary_link'],
+    [construction != 'primary'],
+    [construction != 'primary_link'],
+    [proposed != 'tertiary'],
+    [proposed != 'tertiary_link'],
+    [construction != 'tertiary'],
+    [construction != 'tertiary_link'] {
+      [zoom >= 14] {
+        line-width: 0.75;
+        line-color: @residential-fill;
+        line-join: round;
+      }
+      [zoom >= 16] { line-width: 0.8; }
+      [zoom >= 17] { line-width: 2; }
+    }
+  }
+*/
+
   [highway = 'motorway'][tunnel != 'yes'] {
     [zoom >= 12] {
       line-width: @motorway-width-z12 + 0.5;
