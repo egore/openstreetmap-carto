@@ -24,14 +24,14 @@
     text-face-name: @bold-fonts;
   }
 
-  [aeroway = 'aerodrome'][zoom >= 10][zoom < 13]::aeroway {
+  [aeroway = 'aerodrome'][zoom >= 11][zoom < 13]::aeroway {
     [zoom < 11] {
       point-file: url('symbols/aerodrome.p.16.png');
       text-dy: -12;
     }
     text-name: "[name]";
     text-size: 8;
-    text-fill: #6692da;
+    text-fill: #66a2da;
     text-face-name: @oblique-fonts;
     text-halo-radius: 1;
     text-placement: interior;
@@ -50,7 +50,7 @@
     point-placement: interior;
   }
 
-  [natural = 'peak'][zoom >= 11]::natural {
+  [natural = 'peak'][zoom >= 13]::natural {
     point-file: url('symbols/peak.png');
     point-placement: interior;
   }
