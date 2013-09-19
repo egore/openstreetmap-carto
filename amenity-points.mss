@@ -286,6 +286,17 @@
     point-placement: interior;
   }
 
+  [historic = 'castle'][zoom >= 14]::historic {
+    [ruins = 'yes'] {
+      point-file: url('atkis-symbols/burgruine.png');
+      point-placement: interior;
+    }
+    [ruins != 'yes'] {
+      point-file: url('atkis-symbols/burg.png');
+      point-placement: interior;
+    }
+  }
+
   [shop = 'supermarket'][zoom >= 16]::shop {
     point-file: url('symbols/shop_supermarket.p.16.png');
     point-placement: interior;
