@@ -2771,3 +2771,40 @@
     }
   }
 }
+
+#motorway-trunk-overlay {
+  [highway = 'motorway'][tunnel != 'yes'] {
+    [zoom >= 8] {
+      line-color: @motorway-overlay;
+      line-width: 0.5;
+      line-join: round;
+      line-cap: round;
+    }
+    [zoom >= 9] { line-width: 0.8; }
+    [zoom >= 10] { line-width: 1.0; }
+    [zoom >= 12] { line-width: 1.1; }
+    [zoom >= 13] { line-width: 1.2; }
+    [zoom >= 14] { line-width: 1.3; }
+    [zoom >= 15] { line-width: 2.2; }
+    [zoom >= 16] { line-width: 2.5; }
+    [zoom >= 17] { line-width: 2.9; }
+    [zoom >= 18] { line-width: 3; }
+  }
+  [highway = 'trunk'][tunnel != 'yes'] {
+    [zoom >= 8] {
+      line-color: @trunk-overlay;
+      line-width: 0.4;
+      line-join: round;
+      line-cap: round;
+    }
+    [zoom >= 9] { line-width: 0.8; }
+    [zoom >= 10] { line-width: 1.0; }
+    [zoom >= 12] { line-width: 1.1; }
+    [zoom >= 13] { line-width: 1.2; }
+    [zoom >= 14] { line-width: 1.3; }
+    [zoom >= 15] { line-width: 2.2; }
+    [zoom >= 16] { line-width: 2.5; }
+    [zoom >= 17] { line-width: 2.9; }
+    [zoom >= 18] { line-width: 3; }
+  }
+}
