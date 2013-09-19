@@ -2182,6 +2182,6 @@
   ],
   "scale": 1,
   "metatile": 2,
-  "name": "OpenStreetMap Carto",
-  "description": "A faithful reimplementation of the standard OpenStreetMap style"
+  "name": "OpenStreetMap Carto German",
+  "description": "A faithful reimplementation of the standard OpenStreetMap German style"
 }
