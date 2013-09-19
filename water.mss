@@ -105,54 +105,87 @@
   }
 
   [waterway = 'river'][zoom >= 12] {
-    line-color: @water-color;
-    line-width: 2;
-    line-cap: round;
-    line-join: round;
-    [zoom >= 13] {
-      line-width: 3;
-    }
-    [zoom >= 14] {
-      line-width: 5;
-    }
-    [zoom >= 15] {
-      line-width: 6;
-    }
-    [zoom >= 17] {
-      line-width: 10;
-    }
-    [zoom >= 18] {
-      line-width: 12;
-    }
-    [tunnel = 'yes'] {
+    [tunnel != 'yes'] {
+      line-color: @water-color;
+      line-width: 2;
+      line-cap: round;
+      line-join: round;
+      [zoom >= 13] {
+        line-width: 3;
+      }
       [zoom >= 14] {
-        a/line-width: 6;
-        a/line-dasharray: 4,2;
-        a/line-color: @water-color;
-        b/line-width: 4;
-        b/line-color: white;
+        line-width: 5;
       }
       [zoom >= 15] {
-        a/line-width: 7;
+        line-width: 6;
       }
       [zoom >= 17] {
-        a/line-width: 11;
-        b/line-width: 7;
+        line-width: 10;
       }
       [zoom >= 18] {
-        a/line-width: 13;
-        b/line-width: 9;
+        line-width: 12;
+      }
+    }
+    [tunnel = 'yes'] {
+      line-join: round;
+      [zoom >= 14] {
+        a/line-width: 1;
+        a/line-dasharray: 4,2;
+        a/line-dash-offset: 2;
+        a/line-color: @water-color;
+        b/line-width: 1;
+        b/line-dasharray: 4,2;
+        b/line-dash-offset: -2;
+        b/line-color: @water-color;
+      }
+      [zoom >= 15] {
+        a/line-width: 1.5;
+        a/line-width: 1.5;
+      }
+      [zoom >= 17] {
+        a/line-width: 2;
+        a/line-dash-offset: 3.5;
+        b/line-width: 2;
+        b/line-dash-offset: -3.5;
+      }
+      [zoom >= 18] {
+        a/line-width: 2;
+        a/line-dash-offset: 4.5;
+        b/line-width: 2;
+        b/line-dash-offset: 4.5;
       }
     }
   }
 
   [waterway = 'canal'][zoom >= 12][zoom < 14] {
-    line-color: @water-color;
-    line-width: 3;
-    line-cap: round;
-    line-join: round;
-    [zoom >= 13] {
-      line-width: 4;
+    [tunnel != 'yes'] {
+      line-color: @water-color;
+      line-width: 3;
+      line-cap: round;
+      line-join: round;
+      [zoom >= 13] {
+        line-width: 4;
+      }
+    }
+    [tunnel = 'yes'] {
+      a/line-color: @water-color;
+      a/line-dash-offset: 3;
+      a/line-dasharray: 4,2;
+      a/line-width: 2;
+      a/line-cap: round;
+      a/line-join: round;
+      b/line-color: @water-color;
+      b/line-dash-offset: -3;
+      b/line-dasharray: 4,2;
+      b/line-width: 2;
+      b/line-cap: round;
+      b/line-join: round;
+      [zoom >= 13] {
+        a/line-width: 2;
+        a/line-dash-offset: 3.5;
+        b/line-width: 2;
+        b/line-dash-offset: -3.5;
+      }
     }
   }
 
@@ -170,9 +203,15 @@
     line-color: @water-color;
     [tunnel = 'yes'] {
       line-dasharray: 4,2;
-      line-width: 2.4;
-      a/line-width: 1.2;
-      a/line-color: #f3f7f7;
+      line-dash-offset: 0.6;
+      line-width: 0.6;
+      line-join: round;
+      a/line-dasharray: 4,2;
+      a/line-color: @water-color;
+      a/line-join: round;
+      a/line-dash-offset: 0.6;
+      a/line-width: 0.6;
+      a/line-join: round;
     }
   }
 
@@ -182,10 +221,15 @@
       line-width: 1;
       line-color: @water-color;
       [tunnel = 'yes'] {
-        line-width: 2;
+        line-width: 0.5;
         line-dasharray: 4,2;
-        a/line-width: 1;
-        a/line-color: #f3f7f7;
+        line-join: round;
+        line-dash-offset: 1;
+        a/line-width: 0.5;
+        a/line-dasharray: 4,2;
+        a/line-color: @water-color;
+        a/line-join: round;
+        a/line-dash-offset: -1;
       }
     }
   }
