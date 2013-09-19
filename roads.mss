@@ -2412,7 +2412,7 @@
 
   [feature = 'highway_secondary'],
   [feature = 'highway_secondary_link'] {
-    [zoom >= 9][zoom < 11] {
+    [zoom >= 9][zoom <= 11] {
       line-width: 1.1;
       line-color: @secondary-fill;
       [zoom >= 10] { line-width: 1.4; }
