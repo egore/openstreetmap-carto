@@ -106,7 +106,7 @@
   }
 
   [amenity = 'hospital'][zoom >= 15]::amenity {
-    point-file: url('symbols/hospital.p.16.png');
+    point-file: url('symbols/hospital2.png');
     point-placement: interior;
   }
 
@@ -163,7 +163,7 @@
     point-placement: interior;
   }
 
-  [amenity = 'parking'][zoom >= 15]::amenity {
+  [amenity = 'parking'][zoom >= 16]::amenity {
     point-file: url('symbols/parking.p.16.png');
     point-placement: interior;
     [access != ''][access != 'public'][access != 'yes'] {
@@ -172,7 +172,7 @@
   }
 
   [amenity = 'pharmacy'][zoom >= 17]::amenity {
-    point-file: url('symbols/pharmacy.p.16.png');
+    point-file: url('symbols/pharmacy2.png');
     point-placement: interior;
   }
 
@@ -190,6 +190,9 @@
     }
     [religion = 'jewish'] {
       point-file: url('symbols/jewish3.p.16.png');
+    }
+    [religion = 'buddhist'] {
+      point-file: url('symbols/place_of_worship_buddhist3.p.16.png');
     }
   }
 
@@ -209,7 +212,7 @@
   }
 
   [amenity = 'pub'][zoom >= 16]::amenity {
-    point-file: url('symbols/pub.p.16.png');
+    point-file: url('symbols/pub2.png');
     point-placement: interior;
   }
 
