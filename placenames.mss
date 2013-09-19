@@ -1,4 +1,4 @@
-#continent {
+.continent {
   [place = 'continent'][zoom >= 1][zoom < 3] {
     text-name: "[name]";
     text-size: 10;
