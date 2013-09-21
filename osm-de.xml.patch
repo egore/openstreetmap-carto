@@ -1,0 +1,517 @@
+--- mapnik-german/osm-de.xml	2013-09-19 16:09:07.267569790 +0200
++++ mapnik/osm.xml	2013-09-19 15:26:20.174248536 +0200
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <!DOCTYPE Map [
+-<!ENTITY % entities SYSTEM "inc-de/entities.xml.inc">
++<!ENTITY % entities SYSTEM "inc/entities.xml.inc">
+ %entities;
+ ]>
+ <Map background-color="#97d0d0" srs="&srs900913;" minimum-version="2.1.0" buffer-size="256">
+@@ -2082,19 +2082,6 @@
+     <Rule>
+       <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not [tunnel] = 'yes'</Filter> 
+       &maxscale_zoom13;
+-      &minscale_zoom13;
+-      <LineSymbolizer stroke-linejoin="round" stroke="white" stroke-width="2" stroke-linecap="round" stroke-opacity="0.4"/>
+-      <LineSymbolizer stroke-linejoin="round" stroke="#996600" stroke-width="1.2" stroke-dasharray="6,3" stroke-linecap="round" stroke-opacity="0.4"/>
+-    </Rule>
+-    <Rule>
+-      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not [tunnel] = 'yes'</Filter> 
+-      &maxscale_zoom14;
+-      &minscale_zoom14;
+-      <LineSymbolizer stroke-linejoin="round" stroke="#644201" stroke-width="0.5" stroke-dasharray="6,3" stroke-linecap="round"/>
+-    </Rule>
+-    <Rule>
+-      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not [tunnel] = 'yes'</Filter> 
+-      &maxscale_zoom15;
+       <LineSymbolizer stroke-linejoin="round" stroke="white" stroke-width="1.0" stroke-linecap="round" stroke-opacity="0.4"/>
+       <LineSymbolizer stroke-linejoin="round" stroke="black" stroke-width="0.5" stroke-dasharray="6,3" stroke-linecap="round"/>
+     </Rule>
+@@ -2113,19 +2100,8 @@
+     <Rule>
+       <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not [tunnel] = 'yes'</Filter>
+       &maxscale_zoom13;
+-      &minscale_zoom13;
+-      <LineSymbolizer stroke="#c8c8c8" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+-    </Rule>
+-    <Rule>
+-      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not [tunnel] = 'yes'</Filter>
+-      &maxscale_zoom14;
+-      &minscale_zoom14;
+-      <LineSymbolizer stroke="#83cfe8" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+-    </Rule>
+-    <Rule>
+-      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not [tunnel] = 'yes'</Filter>
+-      &maxscale_zoom15;
+-      <LineSymbolizer stroke="#f1f1f1" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
++      <LineSymbolizer stroke-linejoin="round" stroke="white" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/>
++      <LineSymbolizer stroke-linejoin="round" stroke="blue" stroke-width="1.2" stroke-dasharray="1,3" stroke-linecap="round"/>
+     </Rule>
+     <Rule>
+       <Filter>[highway] = 'byway'</Filter>
+@@ -2137,15 +2113,8 @@
+       <Filter>[highway] = 'track'</Filter>
+       &maxscale_zoom13;
+       &minscale_zoom13;
+-      <LineSymbolizer stroke-linejoin="round" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-opacity="0.4"/>
+-      <LineSymbolizer stroke-linejoin="round" stroke="#99742b" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.4"/>
+-    </Rule>
+-    <Rule>
+-	  <Filter>[highway] = 'track'</Filter>
+-	  &maxscale_zoom14;
+-	  &minscale_zoom14;
+-	  <LineSymbolizer stroke="white" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-opacity="0.4"/>
+-	  <LineSymbolizer stroke="#99742b" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" stroke-opacity="0.5"/>
++      <LineSymbolizer stroke-linejoin="round" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.4"/>
++      <LineSymbolizer stroke-linejoin="round" stroke="#996600" stroke-width="1.2" stroke-dasharray="3,4" stroke-linecap="round"/>
+     </Rule>
+     <Rule>
+       <Filter>[highway] = 'unsurfaced'</Filter>
+@@ -2202,9 +2171,8 @@
+     </Rule>
+ </Style>
+ <Style name="access">
+-<!--
+      <Rule>
+-      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential')</Filter>
++      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential' or [highway]='footway')</Filter>
+       &maxscale_zoom15;
+       &minscale_zoom15;
+       <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="#cf9" stroke-linecap="round" stroke-dasharray="6,8" stroke-width="6"/>
+@@ -2216,11 +2184,10 @@
+       <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="#cf9" stroke-linecap="round" stroke-dasharray="6,8" stroke-width="3"/>
+     </Rule>
+      <Rule>
+-      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential')</Filter>
++      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential' or [highway]='footway' or [highway]='service')</Filter>
+       &maxscale_zoom16;
+       <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="#cf9" stroke-linecap="round" stroke-dasharray="6,8" stroke-width="6"/>
+     </Rule>
+--->
+     <Rule>
+       <Filter>[access]='destination' and ([highway]='unclassified' or [highway]='residential')</Filter>
+       &maxscale_zoom15;
+@@ -2244,7 +2211,7 @@
+       <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="#c2e0ff" stroke-linecap="round" stroke-dasharray="6,8" stroke-width="4"/>
+     </Rule>
+     <Rule>
+-      <Filter>([access] = 'private' or [access] = 'no') and not ([highway] = 'service' or [highway] = 'footway' or [highway] = 'cycleway' or [highway] = 'path')</Filter>
++      <Filter>([access] = 'private' or [access] = 'no') and not [highway] = 'service'</Filter>
+       &maxscale_zoom15;
+       &minscale_zoom15;
+       <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="#efa9a9" stroke-linecap="round" stroke-dasharray="6,8" stroke-width="6"/>
+@@ -2256,21 +2223,10 @@
+       <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="#efa9a9" stroke-linecap="round" stroke-dasharray="6,8" stroke-width="3"/>
+     </Rule>
+     <Rule>
+-      <Filter>([access] = 'private' or [access] = 'no') and ([highway] = 'footway' or [highway] = 'cycleway' or [highway] = 'path')</Filter>
+-      &maxscale_zoom15;
+-      &minscale_zoom15;
+-      <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="#efa9a9" stroke-linecap="round" stroke-dasharray="6,8" stroke-width="3"/>
+-    </Rule>
+-    <Rule>
+-      <Filter>([access] = 'private' or [access] = 'no') and not ([highway] = 'footway' or [highway] = 'cycleway' or [highway] = 'path')</Filter>
++      <Filter>[access] = 'private' or [access] = 'no'</Filter>
+       &maxscale_zoom16;
+       <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="#efa9a9" stroke-linecap="round" stroke-dasharray="6,8" stroke-width="6"/>
+     </Rule>
+-    <Rule>
+-      <Filter>([access] = 'private' or [access] = 'no') and ([highway] = 'footway' or [highway] = 'cycleway' or [highway] = 'path')</Filter>
+-      &maxscale_zoom16;
+-      <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="#efa9a9" stroke-linecap="round" stroke-dasharray="6,8" stroke-width="1.7"/>
+-    </Rule>
+ </Style>
+ <Style name="footbikecycle-tunnels">
+     <Rule>
+@@ -4062,7 +4018,7 @@
+     <StyleName>highway-area-casing</StyleName>
+     <Datasource>
+       <Parameter name="table">
+-      (select way,highway,railway,bicycle,tunnel,foot from &prefix;_polygon
++      (select way,highway,railway from &prefix;_polygon
+        where highway in ('residential','unclassified','pedestrian','service','footway','track','path','platform','cycleway')
+           or railway='platform'
+        order by z_order,way_area desc) as roads
+@@ -4075,11 +4031,11 @@
+     <StyleName>minor-roads-casing</StyleName>
+     <Datasource>
+       <Parameter name="table">
+-      (select way,highway,bicycle,foot,construction,proposed,
++      (select way,highway,
+        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+        case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text else service end as service
+        from &prefix;_line
+-       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','road','service','pedestrian','raceway','living_street','footway','path','cycleway','construction','proposed')
++       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','road','service','pedestrian','raceway','living_street')
+        order by z_order) as roads
+       </Parameter>
+       &datasource-settings;
+@@ -4089,8 +4045,8 @@
+     <StyleName>highway-area-fill</StyleName>
+     <Datasource>
+       <Parameter name="table">
+-      (select way,highway,railway,aeroway,foot,bicycle,tunnel from &prefix;_polygon
+-       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path','platform','services','cycleway')
++      (select way,highway,railway,aeroway from &prefix;_polygon
++       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path','platform','services')
+           or railway='platform'
+           or aeroway in ('runway','taxiway','helipad')
+        order by z_order,way_area desc) as roads
+@@ -4111,7 +4067,6 @@
+ <Layer name="minor-roads-fill" status="on" srs="&osm2pgsql_projection;">
+     <StyleName>minor-roads-fill-links</StyleName>
+     <StyleName>minor-roads-fill</StyleName>
+-	<StyleName>motorway-trunk-overlay</StyleName>
+     <Datasource>
+       <Parameter name="table">
+       (select way,highway,horse,bicycle,foot,construction,aeroway,
+@@ -4157,7 +4112,6 @@
+ &layer-aerialways;
+ <Layer name="roads" status="on" srs="&osm2pgsql_projection;">
+     <StyleName>roads</StyleName>
+-	<StyleName>motorway-trunk-overlay</StyleName>
+     <Datasource>
+       <Parameter name="table">
+       (select way,highway,
+@@ -4219,12 +4173,10 @@
+     <StyleName>bridges_casing</StyleName>
+     <StyleName>bridges_casing2</StyleName>
+     <StyleName>bridges_fill</StyleName>
+-	<StyleName>motorway-trunk-overlay</StyleName>
+     <Datasource>
+       <Parameter name="table">
+       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
+-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+-	   case when railway in ('spur','siding')
++       case when railway in ('spur','siding')
+               or (railway='rail' and service in ('spur','siding','yard'))
+             then 'INT-spur-siding-yard'::text else railway end as railway
+        from &prefix;_line
+@@ -4274,12 +4226,10 @@
+     <StyleName>bridges_casing</StyleName>
+     <StyleName>bridges_casing2</StyleName>
+     <StyleName>bridges_fill</StyleName>
+-	<StyleName>motorway-trunk-overlay</StyleName>
+     <Datasource>
+       <Parameter name="table">
+       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
+-	   case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+-	   case when railway in ('spur','siding')
++       case when railway in ('spur','siding')
+               or (railway='rail' and service in ('spur','siding','yard'))
+             then 'INT-spur-siding-yard'::text else railway end as railway
+        from &prefix;_line
+@@ -4329,12 +4279,10 @@
+     <StyleName>bridges_casing</StyleName>
+     <StyleName>bridges_casing2</StyleName>
+     <StyleName>bridges_fill</StyleName>
+-	<StyleName>motorway-trunk-overlay</StyleName>
+     <Datasource>
+       <Parameter name="table">
+       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
+-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+-	   case when railway in ('spur','siding')
++       case when railway in ('spur','siding')
+               or (railway='rail' and service in ('spur','siding','yard'))
+             then 'INT-spur-siding-yard'::text else railway end as railway
+        from &prefix;_line
+@@ -4384,12 +4332,10 @@
+     <StyleName>bridges_casing</StyleName>
+     <StyleName>bridges_casing2</StyleName>
+     <StyleName>bridges_fill</StyleName>
+-	<StyleName>motorway-trunk-overlay</StyleName>
+     <Datasource>
+       <Parameter name="table">
+       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
+-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+-	   case when railway in ('spur','siding')
++       case when railway in ('spur','siding')
+               or (railway='rail' and service in ('spur','siding','yard'))
+             then 'INT-spur-siding-yard'::text else railway end as railway
+        from &prefix;_line
+@@ -4439,12 +4385,10 @@
+     <StyleName>bridges_casing</StyleName>
+     <StyleName>bridges_casing2</StyleName>
+     <StyleName>bridges_fill</StyleName>
+-	<StyleName>motorway-trunk-overlay</StyleName>
+     <Datasource>
+       <Parameter name="table">
+       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
+-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+-	   case when railway in ('spur','siding')
++       case when railway in ('spur','siding')
+               or (railway='rail' and service in ('spur','siding','yard'))
+             then 'INT-spur-siding-yard'::text else railway end as railway
+        from &prefix;_line
+@@ -4494,12 +4438,10 @@
+     <StyleName>bridges_casing</StyleName>
+     <StyleName>bridges_casing2</StyleName>
+     <StyleName>bridges_fill</StyleName>
+-	<StyleName>motorway-trunk-overlay</StyleName>
+     <Datasource>
+       <Parameter name="table">
+       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
+-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+-	   case when railway in ('spur','siding')
++       case when railway in ('spur','siding')
+               or (railway='rail' and service in ('spur','siding','yard'))
+             then 'INT-spur-siding-yard'::text else railway end as railway
+        from &prefix;_line
+@@ -4600,7 +4542,7 @@
+      <Datasource>
+       <Parameter name="table">
+       (select way,highway,aeroway,ref,char_length(ref) as length,
+-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
++       case when bridge in ('yes','true','1','viaduct','swing','lift') then 'yes'::text else bridge end as bridge
+        from &prefix;_line
+        where (highway is not null or aeroway is not null)
+          and ref is not null
+@@ -4620,7 +4562,6 @@
+          and leisure IS NULL
+          and landuse IS NULL
+          and name is not null
+-         and (railway IS NULL OR railway != 'abandoned')
+       ) as roads
+       </Parameter>
+       &datasource-settings;
+@@ -4630,13 +4571,7 @@
+     <StyleName>text</StyleName>
+     <Datasource>
+       <Parameter name="table">
+-	    <!--
+-	    Die ele Konstruktion dient dazu immer bis zu zwei
+-	    Nachkommastellen anzuzeigen aber nie Nullen nach dem Komma (z.B.
+-	    wuerde aus 222.000 einfach 222, aus 222.222 222.22). Desweiteren
+-	    wird , statt . als Dezimaltrenner verwendet
+-	    -->
+-      (select way,amenity,shop,access,leisure,landuse,man_made,"natural",place,tourism,trim(trailing ',' from replace(TO_CHAR(ele,'FM9999D99'), '.', ',')) as ele,&get_name;,ref,military,aeroway,waterway,historic,'yes'::text as point
++      (select way,amenity,shop,access,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,historic,'yes'::text as point
+        from &prefix;_point
+        where amenity is not null
+           or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store','butcher','car','car_repair','bicycle','florist')
+@@ -4649,7 +4584,7 @@
+           or military='danger_area'
+           or aeroway='gate'
+           or waterway='lock'
+-          or historic in ('memorial','archaeological_site','castle')
++          or historic in ('memorial','archaeological_site')
+       ) as text
+       </Parameter>
+       &datasource-settings;
+@@ -4659,8 +4594,7 @@
+     <StyleName>text</StyleName>
+     <Datasource>
+       <Parameter name="table">
+-	    <!-- ToDo: Style-de hatte shop hier rausgenommen (?) -->
+-      (select way,aeroway,shop,access,amenity,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,&get_name;,ref,military,waterway,historic,'no'::text as point
++      (select way,aeroway,shop,access,amenity,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,historic,'no'::text as point
+        from &prefix;_polygon
+        where amenity is not null
+           or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store', 'butcher','car','car_repair','bicycle')
+@@ -4671,7 +4605,7 @@
+           or man_made in ('lighthouse','windmill')
+           or place='island'
+           or military='danger_area'
+-          or historic in ('memorial','archaeological_site','castle')
++          or historic in ('memorial','archaeological_site')
+       ) as text
+       </Parameter>
+       &datasource-settings;
+@@ -4681,7 +4615,7 @@
+     <StyleName>area-text</StyleName>
+     <Datasource>
+       <Parameter name="table">
+-      (select way,way_area, &get_name;
++      (select way,way_area,name
+        from &prefix;_polygon
+        where name is not null
+          and (waterway is null or waterway != 'riverbank')
+@@ -4697,7 +4631,7 @@
+     <StyleName>boundary</StyleName>
+     <Datasource>
+       <Parameter name="table">
+-      (select way,way_area,&get_name;,boundary from &prefix;_polygon where boundary='national_park' and building is null) as boundary
++      (select way,way_area,name,boundary from &prefix;_polygon where boundary='national_park' and building is null) as boundary
+       </Parameter>
+       &datasource-settings;
+     </Datasource>
+@@ -4706,7 +4640,7 @@
+     <StyleName>theme_park</StyleName>
+     <Datasource>
+       <Parameter name="table">
+-      (select way,&get_name;,tourism from &prefix;_polygon where tourism='theme_park') as theme_park
++      (select way,name,tourism from &prefix;_polygon where tourism='theme_park') as theme_park
+       </Parameter>
+       &datasource-settings;
+     </Datasource>
+diff -Naur mapnik-german/inc-de/entities.xml.inc mapnik/inc/entities.xml.inc
+--- mapnik-german/inc-de/entities.xml.inc	2013-09-09 13:19:34.989805951 +0200
++++ mapnik/inc/entities.xml.inc	2013-09-18 12:47:30.647747865 +0200
+@@ -4,8 +4,6 @@
+ <!ENTITY fontset-settings SYSTEM "fontset-settings.xml.inc">
+ <!ENTITY srs900913 "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+ <!ENTITY srsmercator "+proj=merc +datum=WGS84 +over">
+-<!ENTITY % i10n-settings SYSTEM "i10n-settings.xml.inc">
+-%i10n-settings;
+ <!ENTITY srs4326 "+init=epsg:4326">
+ <!ENTITY % layers SYSTEM "layers.xml.inc">
+ %layers;
+diff -Naur mapnik-german/inc-de/i10n-settings.xml.inc mapnik/inc/i10n-settings.xml.inc
+--- mapnik-german/inc-de/i10n-settings.xml.inc	2013-08-27 16:39:56.337302128 +0200
++++ mapnik/inc/i10n-settings.xml.inc	1970-01-01 01:00:00.000000000 +0100
+@@ -1,14 +0,0 @@
+-<!-- Settings for german localization of placenames -->
+-
+-<!--
+-If you don't want german localization just uncomment the following:
+--->
+-
+-<!-- <!ENTITY get_name  'name'> -->
+-
+-
+-<!--
+-This will use a custom PL/pgSQL function for selecting the most
+-appropriate placename (from the perspective of a native german speaker)
+--->
+-<!ENTITY get_name   'get_localized_name(name,"name:de",int_name,"name:en") as name'>
+diff -Naur mapnik-german/inc-de/layer-placenames.xml.inc mapnik/inc/layer-placenames.xml.inc
+--- mapnik-german/inc-de/layer-placenames.xml.inc	2013-09-19 11:32:21.140981282 +0200
++++ mapnik/inc/layer-placenames.xml.inc	2013-09-19 12:27:40.180965661 +0200
+@@ -74,89 +74,43 @@
+       <TextSymbolizer size="14" fill="#000" dy="0" fontset-name="book-fonts" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+     </Rule>
+ </Style>
+-<Style name="city1">
++<Style name="city">
+     <Rule>
+       <Filter>[place] = 'city' or [place]='metropolis'</Filter>
+       &maxscale_zoom6;
+-      &minscale_zoom6;
+-      <TextSymbolizer size="9" fill="#000" dy="0" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="false" minimum-distance="2">[name]</TextSymbolizer>
+-    </Rule>
+-</Style>
+-<Style name="city2">
+-    <Rule>
+-      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
+-      &maxscale_zoom7;
+-      &minscale_zoom7;
+-      <TextSymbolizer size="10" fill="#000" dy="0" fontset-name="book-fonts" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+-    </Rule>
+-    <Rule>
+-      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
+-      &maxscale_zoom8;
+       &minscale_zoom8;
+-      <TextSymbolizer size="11" fill="#000" dy="0" fontset-name="book-fonts" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
++      <TextSymbolizer size="8" fill="#000" dy="0" fontset-name="book-fonts" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+     </Rule>
+     <Rule>
+       <Filter>[place] = 'city' or [place]='metropolis'</Filter>
+       &maxscale_zoom9;
+-      &minscale_zoom9;
+-      <TextSymbolizer size="14" fill="#000" dy="0" fontset-name="book-fonts" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+-    </Rule>
+-    <Rule>
+-      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
+-      &maxscale_zoom10;
+       &minscale_zoom10;
+-      <TextSymbolizer size="15" fill="#000" dy="0" fontset-name="book-fonts" halo-radius="1" halo-fill="rgba(255,255,255,0.25)" wrap-width="0">[name]</TextSymbolizer>
++      <TextSymbolizer size="11" fill="#000" dy="0" fontset-name="book-fonts" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+     </Rule>
+     <Rule>
+       <Filter>[place] = 'city' or [place]='metropolis'</Filter>
+       &maxscale_zoom11;
+-      &minscale_zoom11;
+-      <TextSymbolizer size="16" fill="#000" dy="0" fontset-name="book-fonts" halo-radius="1" halo-fill="rgba(255,255,255,0.25)" wrap-width="0">[name]</TextSymbolizer>
+-    </Rule>
+-    <Rule>
+-      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
+-      &maxscale_zoom12;
+       &minscale_zoom14;
+-      <TextSymbolizer size="16" fill="#000" dy="0" fontset-name="book-fonts" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
++      <TextSymbolizer size="14" fill="#000" dy="0" fontset-name="book-fonts" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+     </Rule>
+ </Style>
+ <Style name="town">
+     <Rule>
+-      <Filter>[place] = 'town' or [place]='large_town'</Filter>
++      <Filter>[place] = 'town' or [place]='large_town' or [place]='small_town'</Filter>
+       &maxscale_zoom9;
+-      &minscale_zoom9;
+-      <TextSymbolizer size="8" fill="#000" fontset-name="book-fonts" halo-radius="1" wrap-width="20" minimum-distance="6">[name]</TextSymbolizer>
+-    </Rule>
+-    <Rule>
+-      <Filter>[place] = 'town' or [place]='large_town'</Filter>
+-      &maxscale_zoom10;
+       &minscale_zoom10;
+-      <TextSymbolizer size="9" fill="#000" fontset-name="book-fonts" halo-radius="1" wrap-width="20">[name]</TextSymbolizer>
++      <TextSymbolizer size="8" fill="#000" fontset-name="book-fonts" halo-radius="1" wrap-width="20">[name]</TextSymbolizer>
+     </Rule>
+     <Rule>
+-      <Filter>[place] = 'town' or [place]='large_town'</Filter>
++      <Filter>[place] = 'town' or [place]='large_town' or [place]='small_town'</Filter>
+       &maxscale_zoom11;
+       &minscale_zoom13;
+       <TextSymbolizer size="10" fill="#000" fontset-name="book-fonts" halo-radius="1" wrap-width="20">[name]</TextSymbolizer>
+     </Rule>
+     <Rule>
+-      <Filter>[place] = 'town' or [place]='large_town'</Filter>
++      <Filter>[place] = 'town' or [place]='large_town' or [place]='small_town'</Filter>
+       &maxscale_zoom14;
+-      <TextSymbolizer size="14" fill="#000" fontset-name="book-fonts" halo-radius="1" wrap-width="20">[name]</TextSymbolizer>
+-    </Rule>
+-</Style>
+-<Style name="town2">
+-    <Rule>
+-      <Filter>[place]='small_town'</Filter>
+-      &maxscale_zoom11;
+-      &minscale_zoom12;
+-      <TextSymbolizer size="9" fill="#000" fontset-name="book-fonts" halo-radius="1" wrap-width="20">[name]</TextSymbolizer>
+-    </Rule>
+-    <Rule>
+-      <Filter>[place]='small_town'</Filter>
+-      &maxscale_zoom13;
+-      &minscale_zoom15;
+-      <TextSymbolizer size="10" fill="#000" fontset-name="book-fonts" halo-radius="1" wrap-width="20">[name]</TextSymbolizer>
++      <TextSymbolizer size="14" fill="#777777" fontset-name="book-fonts" halo-radius="1" wrap-width="20">[name]</TextSymbolizer>
+     </Rule>
+ </Style>
+ <Style name="suburb">
+@@ -223,25 +177,12 @@
+       &datasource-settings;
+     </Datasource>
+ </Layer>
+-<Layer name="placenames-medium1" status="on" srs="&osm2pgsql_projection;">
+-    <StyleName>city1</StyleName>
+-    <Datasource>
+-      <Parameter name="table">
+-      (select way,place,&get_name;
+-      from &prefix;_point
+-      where place in ('city','metropolis')
+-        and (capital is null or capital != 'yes')
+-      ) as placenames</Parameter>
+-      &datasource-settings;
+-    </Datasource>
+-</Layer>
+-<Layer name="placenames-medium2" status="on" srs="&osm2pgsql_projection;">
+-    <StyleName>city2</StyleName>
++<Layer name="placenames-medium" status="on" srs="&osm2pgsql_projection;">
++    <StyleName>city</StyleName>
+     <StyleName>town</StyleName>
+-    <StyleName>town2</StyleName>
+     <Datasource>
+       <Parameter name="table">
+-      (select way,place,&get_name;
++      (select way,place,name
+       from &prefix;_point
+       where place in ('city','metropolis','town','large_town','small_town')
+         and (capital is null or capital != 'yes')
+@@ -255,7 +196,7 @@
+     <StyleName>hamlet</StyleName>
+     <Datasource>
+       <Parameter name="table">
+-      (select way,place,&get_name;
++      (select way,place,name
+       from &prefix;_point
+       where place in ('suburb','village','large_village','hamlet','locality','isolated_dwelling','farm')
+       ) as placenames</Parameter>
